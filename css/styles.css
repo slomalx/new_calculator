@@ -1,0 +1,11 @@
+
+
+
+
+.container {
+    position: relative;
+    width: 360px;
+    height: 660px;
+    background-color: #1C1C1C;
+    border-radius: 40px;
+}
