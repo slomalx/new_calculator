@@ -4,6 +4,7 @@ let offsetX, offsetY;
 
 // Начало перетаскивания
 draggable.addEventListener('mousedown', (e) => {
+ 
   isDragging = true;
   
   // Вычисляем смещение курсора внутри элемента
