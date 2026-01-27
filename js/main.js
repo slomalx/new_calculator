@@ -1,2 +1,2 @@
 import './drag.js'
-import './numbers.js'
+import './dropInput.js'

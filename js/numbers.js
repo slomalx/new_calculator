@@ -21,5 +21,6 @@ const plusminus = document.getElementById('plusminus')
 
 const eqw = document.getElementById('eqw')
 
+const inputField = document.getElementById('inputField')
 
 
