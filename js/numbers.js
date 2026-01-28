@@ -23,4 +23,6 @@ const eqw = document.getElementById('eqw')
 
 const inputField = document.getElementById('inputField')
 
+const operation = document.querySelectorAll('.operation')
+
 
