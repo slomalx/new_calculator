@@ -1,10 +1,9 @@
 import './numbers.js'
 
-let tempValue;
+
 
 ac.addEventListener('click', () => {
     inputField.value = '';
-    tempValue = null;
 })
 
 one.addEventListener('click', () => {

@@ -16,5 +16,8 @@ plus.addEventListener('click', () => {
 eqw.addEventListener('click', () => {
     if (inputField.value.includes('+')) {
         
+        inputField.value = inputField.value.split('+').reduce((sum, current) => +sum + +current)
+
+        
     }
 })
