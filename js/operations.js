@@ -13,6 +13,10 @@ plus.addEventListener('click', () => {
     inputField.value += ' + '
 })
 
+minus.addEventListener('click', () => {
+    inputField.value += ' - '
+})
+
 eqw.addEventListener('click', () => {
     if (inputField.value.includes('+')) {
         
@@ -21,3 +25,4 @@ eqw.addEventListener('click', () => {
         
     }
 })
+
