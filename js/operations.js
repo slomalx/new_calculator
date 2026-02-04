@@ -31,11 +31,32 @@ eqw.addEventListener('click', ()=> {
 
 
 function calculateExpression(expression) {
-    // Шаг 1: Обрабатываем умножение и деление
+    // Сначала преобразуем все строки-числа в настоящие числа
+    for (let i = 0; i < expression.length; i++) {
+        if (typeof expression[i] === 'string' && !isNaN(expression[i]) && expression[i] !== '') {
+            expression[i] = parseFloat(expression[i]);
+        }
+    }
+    
+    // Шаг 1: Обрабатываем унарные минусы
+    for (let i = 0; i < expression.length; i++) {
+        if (expression[i] === '-' && 
+            (i === 0 || typeof expression[i-1] !== 'number' && 
+             expression[i-1] !== ')')) {
+            // Это унарный минус, объединяем его со следующим числом
+            if (typeof expression[i+1] === 'number') {
+                expression[i+1] = -expression[i+1];
+                expression.splice(i, 1);
+                i--;
+            }
+        }
+    }
+    
+    // Шаг 2: Обрабатываем умножение и деление
     for (let i = 0; i < expression.length; i++) {
         if (expression[i] === '÷' || expression[i] === 'x') {
-            const left = expression[i - 1];
-            const right = expression[i + 1];
+            const left = parseFloat(expression[i - 1]);
+            const right = parseFloat(expression[i + 1]);
             const operator = expression[i];
             
             let result;
@@ -51,11 +72,11 @@ function calculateExpression(expression) {
         }
     }
     
-    // Шаг 2: Обрабатываем сложение и вычитание
+    // Шаг 3: Обрабатываем сложение и вычитание
     for (let i = 0; i < expression.length; i++) {
         if (expression[i] === '+' || expression[i] === '-') {
-            const left = expression[i - 1];
-            const right = expression[i + 1];
+            const left = parseFloat(expression[i - 1]);
+            const right = parseFloat(expression[i + 1]);
             const operator = expression[i];
             
             let result;
@@ -74,5 +95,3 @@ function calculateExpression(expression) {
     // В конце должен остаться только один элемент - результат
     return expression[0];
 }
-
-
