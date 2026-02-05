@@ -66,6 +66,9 @@ function calculateExpression(expression) {
                 result = left / right;
             }
             
+            // Округляем до 10 знаков после запятой для избежания ошибок с плавающей точкой
+            result = Math.round(result * 10000000000) / 10000000000;
+            
             // Заменяем три элемента (число, оператор, число) на результат
             expression.splice(i - 1, 3, result);
             i--; // Уменьшаем индекс, так как массив стал короче
@@ -86,6 +89,9 @@ function calculateExpression(expression) {
                 result = left - right;
             }
             
+            // Округляем до 10 знаков после запятой для избежания ошибок с плавающей точкой
+            result = Math.round(result * 10000000000) / 10000000000;
+            
             // Заменяем три элемента на результат
             expression.splice(i - 1, 3, result);
             i--; // Уменьшаем индекс
@@ -93,5 +99,6 @@ function calculateExpression(expression) {
     }
     
     // В конце должен остаться только один элемент - результат
-    return expression[0];
+    // Округляем финальный результат
+    return Math.round(expression[0] * 10000000000) / 10000000000;
 }
