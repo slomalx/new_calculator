@@ -25,6 +25,10 @@ multi.addEventListener('click', () => {
     inputField.value += ' x '
 })
 
+percent.addEventListener('click', () => {
+    inputField.value += ' % '
+})
+
 eqw.addEventListener('click', ()=> {
     inputField.value = calculateExpression(inputField.value.split(' '))
 })
