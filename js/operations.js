@@ -38,14 +38,14 @@ function calculateExpression(expression) {
 
 
 
-    console.log(expression);
+
     // преобразуем все строки-числа в настоящие числа
     for (let i = 0; i < expression.length; i++) {
         if (typeof expression[i] === 'string' && !isNaN(expression[i]) && expression[i] !== '') {
             expression[i] = parseFloat(expression[i]);
         }
     }
-    console.log(expression);
+  
             // Шаг 1: Обрабатываем унарные минусы
             for (let i = 0; i < expression.length; i++) {
                 if (expression[i] === '-' && 
@@ -61,7 +61,11 @@ function calculateExpression(expression) {
                     }
                 }
             }
-            console.log(expression);
+          
+        
+            
+
+            
     // Шаг 2: Обрабатываем умножение и деление
     for (let i = 0; i < expression.length; i++) {
         if (expression[i] === '÷' || expression[i] === 'x') {
@@ -84,7 +88,7 @@ function calculateExpression(expression) {
             i--; // Уменьшаем индекс, так как массив стал короче
         }
     }
-    console.log(expression);
+    
     
     // Шаг 3: Обрабатываем сложение и вычитание
     for (let i = 0; i < expression.length; i++) {
@@ -108,7 +112,7 @@ function calculateExpression(expression) {
             i--; // Уменьшаем индекс
         }
     }
-    console.log(expression);
+ 
     // В конце должен остаться только один элемент - результат
     // Округляем финальный результат
     return Math.round(expression[0] * 10000000000) / 10000000000;

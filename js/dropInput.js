@@ -47,10 +47,16 @@ zero.addEventListener('click', () => {
 })
 
 dot.addEventListener('click', () => {
-    inputField.value += '.';
+    if (inputField.value[inputField.value.length - 1] === '.') {
+         return
+    } else {
+        inputField.value += '.'
+    };
 })
 
 plusminus.addEventListener('click', () => {
     inputField.value = -inputField.value;
 })
+
+
 
