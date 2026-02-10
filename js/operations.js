@@ -10,23 +10,44 @@ document.addEventListener('click', (event) => {
 })
 
 plus.addEventListener('click', () => {
-    inputField.value += ' + '
+    if (inputField.value[inputField.value.length - 1] === ' ') {
+        return
+   } else {
+       inputField.value += ' + '
+   };
+    
 })
 
 minus.addEventListener('click', () => {
-    inputField.value += ' - '
+    if (inputField.value[inputField.value.length - 1] === ' ') {
+        return
+   } else {
+       inputField.value += ' - '
+   };
 })
 
 divide.addEventListener('click', () => {
+    if (inputField.value[inputField.value.length - 1] === ' ') {
+        return
+   } else {
     inputField.value += ' ÷ '
+};
 })
 
 multi.addEventListener('click', () => {
+    if (inputField.value[inputField.value.length - 1] === ' ') {
+        return
+   } else {
     inputField.value += ' x '
+};
 })
 
 percent.addEventListener('click', () => {
+    if (inputField.value[inputField.value.length - 1] === ' ') {
+        return
+   } else {
     inputField.value += ' % '
+};
 })
 
 eqw.addEventListener('click', ()=> {
@@ -96,6 +117,7 @@ function calculateExpression(expression) {
             const left = parseFloat(expression[i - 1]);
             const right = parseFloat(expression[i + 1]);
             const operator = expression[i];
+            
             
             let result;
             if (operator === '+') {
