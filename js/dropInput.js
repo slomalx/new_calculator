@@ -3,7 +3,7 @@ import './numbers.js'
 
 
 ac.addEventListener('click', () => {
-    inputField.value = '';
+    inputField.value = 0;
 })
 
 one.addEventListener('click', () => {
